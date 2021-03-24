@@ -1,0 +1,32 @@
+{
+    "name": "aviasales-test-task",
+    "version": "0.0.1",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/kilfro/aviasales-test-task.git"
+    },
+    "author": "Kirill Frolov <frolov.cyrill@gmail.com>",
+    "scripts": {
+        "start": "webpack serve --mode development --open 'Google Chrome'",
+        "build": "webpack --mode production"
+    },
+    "dependencies": {
+        "react": "17.0.2",
+        "react-dom": "17.0.2"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.10",
+        "@babel/core": "^7.12.10",
+        "@babel/polyfill": "^7.12.1",
+        "@babel/preset-env": "^7.12.10",
+        "@babel/preset-react": "^7.12.10",
+        "babel-loader": "^8.2.2",
+        "css-loader": "^5.0.1",
+        "html-webpack-plugin": "^4.5.0",
+        "style-loader": "^2.0.0",
+        "webpack": "^5.10.0",
+        "webpack-cli": "^4.2.0",
+        "webpack-dev-server": "^3.11.0"
+    }
+}
