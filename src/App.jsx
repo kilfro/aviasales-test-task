@@ -1,6 +1,8 @@
+import './style/app.css'
+
 import React from 'react'
 import StopsFilter from './components/StopsFilter'
-import Ticket from './components/Ticket'
+import TicketsList from './components/TicketsList'
 
 const testTicket = {
     "price": 31101,
@@ -28,10 +30,10 @@ const testTicket = {
 
 const App = () => {
     return (
-        <>
+        <div className='app'>
             <StopsFilter />
-            <Ticket {...testTicket} />
-        </>
+            <TicketsList tickets={[testTicket]}/>
+        </div>
     )
 }
 
