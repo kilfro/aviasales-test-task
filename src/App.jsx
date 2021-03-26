@@ -1,11 +1,15 @@
 import './style/app.css'
 
-import React from 'react'
+import React, { useEffect } from 'react'
+
 import StopsFilter from './components/StopsFilter'
 import TicketsList from './components/TicketsList'
 import { connect } from 'react-redux'
+import { requestSearchId } from './store/actions'
 
-const App = ({ isLoading }) => {
+const App = ({ isLoading, requestSearchId }) => {
+    useEffect(requestSearchId, [])
+
     return (
         <div className='app'>
             {isLoading
@@ -23,4 +27,8 @@ const mapStateToProps = state => ({
     isLoading: state.isLoading
 })
 
-export default connect(mapStateToProps)(App)
+const mapDispatchToProps = {
+    requestSearchId
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

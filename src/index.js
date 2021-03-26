@@ -1,42 +1,32 @@
 import './index.css'
+import 'regenerator-runtime/runtime'
+
+import { applyMiddleware, createStore } from 'redux'
 
 import App from './App'
 import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import createSagaMiddleware from 'redux-saga'
 import reducer from './store/reducer'
+import { rootSaga } from './store/sagas'
 import { toggleIsLoading } from './store/actions'
 
-const testTicket = [
-  {
-    price: 31101,
-    carrier: 'SU',
-    segments: [
-      {
-        origin: 'MOW',
-        destination: 'HKT',
-        date: '2021-04-03T02:33:00.000Z',
-        stops: [],
-        duration: 1729,
-      },
-      {
-        origin: 'HKT',
-        destination: 'MOW',
-        date: '2021-04-23T01:08:00.000Z',
-        stops: ['SHA', 'BKK'],
-        duration: 1149,
-      },
-    ],
-  },
-]
 const defaultState = {
   isLoading: true,
-  tickets: testTicket,
+  tickets: [],
+  searchId: null,
 }
-const store = createStore(reducer, defaultState)
 
-setTimeout(() => store.dispatch(toggleIsLoading()), 1500)
+const sagaMiddleware = createSagaMiddleware()
+const store = createStore(
+  reducer,
+  defaultState,
+  composeWithDevTools(applyMiddleware(sagaMiddleware))
+)
+
+sagaMiddleware.run(rootSaga)
 
 ReactDOM.render(
   <Provider store={store}>
