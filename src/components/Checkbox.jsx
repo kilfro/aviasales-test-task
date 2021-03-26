@@ -8,6 +8,7 @@ const boxStyle = {
     width: 20,
     display: 'flex',
     justifyContent: 'center',
+    margin: '0 10px'
 }
 
 const getTickStyle = (checked) => ({

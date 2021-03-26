@@ -1,4 +1,5 @@
 import React from 'react'
+import StopsFilter from './components/StopsFilter'
 import Ticket from './components/Ticket'
 
 const testTicket = {
@@ -26,7 +27,12 @@ const testTicket = {
 }
 
 const App = () => {
-    return (<Ticket {...testTicket}/>)
+    return (
+        <>
+            <StopsFilter />
+            <Ticket {...testTicket} />
+        </>
+    )
 }
 
 export default App
