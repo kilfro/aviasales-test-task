@@ -3,39 +3,24 @@ import './style/app.css'
 import React from 'react'
 import StopsFilter from './components/StopsFilter'
 import TicketsList from './components/TicketsList'
+import { connect } from 'react-redux'
 
-const testTicket = {
-    "price": 31101,
-    "carrier": "SU",
-    "segments": [
-        {
-            "origin": "MOW",
-            "destination": "HKT",
-            "date": "2021-04-03T02:33:00.000Z",
-            "stops": [],
-            "duration": 1729
-        },
-        {
-            "origin": "HKT",
-            "destination": "MOW",
-            "date": "2021-04-23T01:08:00.000Z",
-            "stops": [
-                "SHA",
-                "BKK"
-            ],
-            "duration": 1149
-        }
-    ]
-}
-
-const App = () => {
+const App = ({ isLoading }) => {
     return (
         <div className='app'>
-            <StopsFilter />
-            <TicketsList tickets={[testTicket]}/>
+            {isLoading
+                ? <h1>Загрузка...</h1>
+                : <>
+                    <StopsFilter />
+                    <TicketsList />
+                </>
+            }
         </div>
     )
 }
 
-export default App
+const mapStateToProps = state => ({
+    isLoading: state.isLoading
+})
 
+export default connect(mapStateToProps)(App)

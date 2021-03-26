@@ -2,6 +2,7 @@ import '../style/tickets-list.css'
 
 import React from 'react'
 import Ticket from './Ticket'
+import { connect } from 'react-redux'
 
 const TicketsList = ({ tickets }) => (
     <div className='tickets-list'>
@@ -9,4 +10,8 @@ const TicketsList = ({ tickets }) => (
     </div>
 )
 
-export default TicketsList
+const mapStateToProps = state => ({
+    tickets: state.tickets,
+})
+
+export default connect(mapStateToProps)(TicketsList)
