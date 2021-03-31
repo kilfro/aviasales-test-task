@@ -5,9 +5,10 @@ import Ticket from './Ticket'
 import { connect } from 'react-redux'
 
 const TicketsList = ({ tickets, stopsFilter }) => {
-    const filterBySteps = ticket => (
-        ticket.segments.reduce((sum, segment) => segment.stops.length === stopsFilter && sum, true)
-    )
+    const filterBySteps = ticket => {
+        if (stopsFilter.length === 0) return true
+        return ticket.segments.reduce((sum, segment) => stopsFilter.includes(segment.stops.length) && sum, true)
+    }
 
     return (
         <div className='tickets-list'>
