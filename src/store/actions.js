@@ -4,6 +4,7 @@ import {
   REQUEST_SEARCH_ID,
   SET_IS_LOADING,
   SET_SEARCH_ID,
+  SET_STOPS_FILTER,
 } from './types'
 
 export const setIsLoading = (isLoading) => ({
@@ -26,4 +27,9 @@ export const addFoundTicket = (tickets) => ({
 export const loadTicketsPortion = (searchId) => ({
   type: LOAD_TICKETS_PORTION,
   searchId,
+})
+
+export const setStopsFilter = (stops) => ({
+  type: SET_STOPS_FILTER,
+  stopsFilter: stops,
 })

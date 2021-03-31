@@ -32,7 +32,6 @@ function* fetchTickets({ searchId }) {
       console.error(e)
     }
   } while (!searchingFinished)
-
 }
 
 function* watchLoadTickets() {

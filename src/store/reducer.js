@@ -1,4 +1,9 @@
-import { ADD_FOUND_TICKETS, SET_IS_LOADING, SET_SEARCH_ID } from './types'
+import {
+  ADD_FOUND_TICKETS,
+  SET_IS_LOADING,
+  SET_SEARCH_ID,
+  SET_STOPS_FILTER,
+} from './types'
 
 const reducer = {
   [SET_IS_LOADING](state, payload) {
@@ -13,6 +18,11 @@ const reducer = {
   [ADD_FOUND_TICKETS](state, payload) {
     const tickets = [...state.tickets, ...payload.tickets]
     return { ...state, tickets }
+  },
+
+  [SET_STOPS_FILTER](state, payload) {
+    const { stopsFilter } = payload
+    return { ...state, stopsFilter }
   },
 }
 

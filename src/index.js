@@ -17,6 +17,7 @@ const defaultState = {
   isLoading: true,
   tickets: [],
   searchId: null,
+  stopsFilter: 0,
 }
 
 const sagaMiddleware = createSagaMiddleware()
