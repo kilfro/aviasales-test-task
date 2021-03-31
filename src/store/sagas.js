@@ -1,3 +1,5 @@
+import * as API from '../api'
+
 import { LOAD_TICKETS_PORTION, REQUEST_SEARCH_ID } from './types'
 import {
   addFoundTicket,
@@ -8,13 +10,7 @@ import {
 import { all, call, put, takeLatest } from 'redux-saga/effects'
 
 function* fetchSearchId() {
-  const searchId = yield call(() => {
-    return fetch('https://front-test.beta.aviasales.ru/search')
-      .then((resp) => resp.json())
-      .then((data) => {
-        return data.searchId
-      })
-  })
+  const searchId = yield call(API.getSearchId)
 
   yield put(setSearchId(searchId))
   yield put(loadTicketsPortion(searchId))
@@ -25,16 +21,18 @@ function* requestSearchIdSaga() {
 }
 
 function* fetchTickets({ searchId }) {
-  const gotTickets = yield call((searchId) => {
-    return fetch(
-      `https://front-test.beta.aviasales.ru/tickets?searchId=${searchId}`
-    )
-      .then((resp) => resp.json())
-      .then((data) => data.tickets)
-  }, searchId)
+  let searchingFinished = false
+  do {
+    try {
+      const response = yield call(API.getSearchPortion, searchId)
+      yield put(addFoundTicket(response.tickets))
+      searchingFinished = response.stop
+      yield put(setIsLoading(false))
+    } catch (e) {
+      console.error(e)
+    }
+  } while (!searchingFinished)
 
-  yield put(addFoundTicket(gotTickets))
-  yield put(setIsLoading(false))
 }
 
 function* watchLoadTickets() {

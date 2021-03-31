@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 const TicketsList = ({ tickets }) => (
     <div className='tickets-list'>
-        {tickets.map(ticket => <Ticket {...ticket} key={JSON.stringify(ticket)} />)}
+        {tickets.slice(0, 20).map(ticket => <Ticket {...ticket} key={JSON.stringify(ticket)} />)}
     </div>
 )
 
