@@ -11,13 +11,12 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import createSagaMiddleware from 'redux-saga'
 import reducer from './store/reducer'
 import { rootSaga } from './store/sagas'
-import { toggleIsLoading } from './store/actions'
 
 const defaultState = {
   isLoading: true,
   tickets: [],
   searchId: null,
-  stopsFilter: 0,
+  stopsFilter: [],
 }
 
 const sagaMiddleware = createSagaMiddleware()
