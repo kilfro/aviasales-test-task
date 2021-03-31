@@ -3,6 +3,7 @@ import {
   LOAD_TICKETS_PORTION,
   REQUEST_SEARCH_ID,
   SET_IS_LOADING,
+  SET_ORDER_BY,
   SET_SEARCH_ID,
   SET_STOPS_FILTER,
 } from './types'
@@ -32,4 +33,9 @@ export const loadTicketsPortion = (searchId) => ({
 export const setStopsFilter = (stops) => ({
   type: SET_STOPS_FILTER,
   stopsFilter: stops,
+})
+
+export const setOrderBy = (orderBy) => ({
+  type: SET_ORDER_BY,
+  orderBy,
 })

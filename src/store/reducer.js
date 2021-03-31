@@ -1,6 +1,7 @@
 import {
   ADD_FOUND_TICKETS,
   SET_IS_LOADING,
+  SET_ORDER_BY,
   SET_SEARCH_ID,
   SET_STOPS_FILTER,
 } from './types'
@@ -23,6 +24,11 @@ const reducer = {
   [SET_STOPS_FILTER](state, payload) {
     const { stopsFilter } = payload
     return { ...state, stopsFilter }
+  },
+
+  [SET_ORDER_BY](state, payload) {
+    const { orderBy } = payload
+    return { ...state, orderBy }
   },
 }
 

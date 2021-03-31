@@ -17,6 +17,7 @@ const defaultState = {
   tickets: [],
   searchId: null,
   stopsFilter: [],
+  orderBy: 'price',
 }
 
 const sagaMiddleware = createSagaMiddleware()
