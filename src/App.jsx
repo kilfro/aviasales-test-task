@@ -2,6 +2,7 @@ import './style/app.css'
 
 import React, { useEffect } from 'react'
 
+import Loader from './components/Loader'
 import StopsFilter from './components/StopsFilter'
 import TicketsList from './components/TicketsList'
 import { connect } from 'react-redux'
@@ -13,7 +14,7 @@ const App = ({ isLoading, requestSearchId }) => {
     return (
         <div className='app'>
             {isLoading
-                ? <h1>Загрузка...</h1>
+                ? <Loader />
                 : <>
                     <StopsFilter />
                     <TicketsList />
