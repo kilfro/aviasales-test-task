@@ -1,6 +1,7 @@
 import '../style/tickets-list.css'
 
 import React from 'react'
+import SortTabs from './SortTabs'
 import Ticket from './Ticket'
 import { connect } from 'react-redux'
 
@@ -10,10 +11,20 @@ const TicketsList = ({ tickets, stopsFilter, orderBy }) => {
         return ticket.segments.reduce((sum, segment) => stopsFilter.includes(segment.stops.length) && sum, true)
     }
 
-    const comparator = (one, two) => one[orderBy] - two[orderBy]
+    const sumUpDuration = ticket => {
+        return ticket.segments.reduce((sum, next) => sum + next.duration, 0)
+    }
+
+    const comparator = (one, two) => {
+        if (orderBy === 'duration') {
+            return sumUpDuration(one) - sumUpDuration(two)
+        }
+        return one[orderBy] - two[orderBy]
+    }
 
     return (
         <div className='tickets-list'>
+            <SortTabs />
             {tickets
                 .filter(filterBySteps)
                 .sort(comparator)
