@@ -5,20 +5,30 @@ import { connect } from 'react-redux'
 import { setOrderBy } from '../store/actions'
 
 const SortTabs = ({ orderBy, setOrderBy }) => {
+    const orderOptions = {
+        price: 'Самый дешевый',
+        duration: 'Самый быстрый',
+    }
+
     const chosenStyle = {
         border: 'none',
         background: '#2196F3',
         color: '#FFFFFF',
     }
+
     const getChosenStyle = (option) => orderBy === option ? chosenStyle : {}
-    const clickHandler = event => {
-        setOrderBy(event.target.id)
-    }
 
     return (
         <div className='tabs-container'>
-            <div style={getChosenStyle('price')} onClick={clickHandler} id='price'>Самый дешевый</div>
-            <div style={getChosenStyle('duration')} onClick={clickHandler} id='duration'>Самый быстрый</div>
+            {Object.entries(orderOptions).map(([key, label]) => (
+                <div
+                    style={getChosenStyle(key)}
+                    onClick={() => setOrderBy(key)}
+                    key={key}
+                >
+                    {label}
+                </div>
+            ))}
         </div>
     )
 }
