@@ -56,7 +56,8 @@
             "!**/coverage/**",
             "!**/dist/**",
             "!webpack.config.js",
-            "!**/index.js"
+            "!**/index.js",
+            "!**/types.js"
         ]
     }
 }
