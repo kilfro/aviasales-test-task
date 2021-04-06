@@ -4,9 +4,9 @@ import {
   setOrderBy,
   setSearchId,
   setStopsFilter,
-} from '../src/store/actions'
+} from '../../src/store/actions'
 
-import reducer from '../src/store/reducer'
+import reducer from '../../src/store/reducer'
 
 const getTestState = (custom) => ({
   isLoading: true,

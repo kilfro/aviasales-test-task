@@ -6,7 +6,7 @@ import {
   SET_ORDER_BY,
   SET_SEARCH_ID,
   SET_STOPS_FILTER,
-} from '../src/store/types'
+} from '../../src/store/types'
 import {
   addFoundTicket,
   loadTicketsPortion,
@@ -15,7 +15,7 @@ import {
   setOrderBy,
   setSearchId,
   setStopsFilter,
-} from '../src/store/actions'
+} from '../../src/store/actions'
 
 test("Action 'set isLoading' must be created correctly", () => {
   const isLoading = false
