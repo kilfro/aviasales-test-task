@@ -58,6 +58,9 @@
             "!webpack.config.js",
             "!**/index.js",
             "!**/types.js"
-        ]
+        ],
+        "moduleNameMapper": {
+            "\\.css$": "<rootDir>/__mocks__/style.mock.js"
+        }
     }
 }
