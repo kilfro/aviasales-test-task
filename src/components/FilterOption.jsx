@@ -1,6 +1,7 @@
 import '../style/filter-option.css'
 
 import Checkbox from './Checkbox'
+import PropTypes from 'prop-types'
 import React from 'react'
 
 const FilterOption = ({ value, ...rest }) => {
@@ -9,6 +10,13 @@ const FilterOption = ({ value, ...rest }) => {
             <Checkbox {...rest} />{value}
         </label>
     )
+}
+
+FilterOption.propTypes = {
+    checked: PropTypes.bool.isRequired,
+    id: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
 }
 
 export default FilterOption
