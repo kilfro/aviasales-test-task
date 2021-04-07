@@ -1,8 +1,9 @@
 import { getDurationString, getFlightTimes, getStopsQuantityString } from '../functions'
 
+import PropTypes from 'prop-types'
 import React from 'react'
 
-const FlightSegment = ({ origin, destination, date, duration, stops }) => (
+const FlightSegment = ({ origin, destination, date, duration, stops = [] }) => (
     <div className='flight-segment'>
         <div className='segment-part'>
             <div>{origin} - {destination}</div>
@@ -18,5 +19,13 @@ const FlightSegment = ({ origin, destination, date, duration, stops }) => (
         </div>
     </div>
 )
+
+FlightSegment.propTypes = {
+    origin: PropTypes.string.isRequired,
+    destination: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    duration: PropTypes.number.isRequired,
+    stops: PropTypes.arrayOf(PropTypes.string),
+}
 
 export default FlightSegment
