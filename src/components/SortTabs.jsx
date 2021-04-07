@@ -4,7 +4,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { setOrderBy } from '../store/actions'
 
-const SortTabs = ({ orderBy, setOrderBy }) => {
+export const SortTabs = ({ orderBy, setOrderBy }) => {
     const orderOptions = {
         price: 'Самый дешевый',
         duration: 'Самый быстрый',
@@ -18,12 +18,18 @@ const SortTabs = ({ orderBy, setOrderBy }) => {
 
     const getChosenStyle = (option) => orderBy === option ? chosenStyle : {}
 
+    const clickHandler = key => {
+        if (key !== orderBy) {
+            setOrderBy(key)
+        }
+    }
+
     return (
         <div className='tabs-container'>
             {Object.entries(orderOptions).map(([key, label]) => (
                 <div
                     style={getChosenStyle(key)}
-                    onClick={() => setOrderBy(key)}
+                    onClick={() => clickHandler(key)}
                     key={key}
                 >
                     {label}
