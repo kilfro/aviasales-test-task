@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlightSegment must be rendered correctly 1`] = `
+<div
+  className="flight-segment"
+>
+  <div
+    className="segment-part"
+  >
+    <div>
+      SVO
+       - 
+      LED
+    </div>
+    <div>
+      19:45 - 21:00
+    </div>
+  </div>
+  <div
+    className="segment-part"
+  >
+    <div>
+      в пути
+    </div>
+    <div>
+      1ч 15м
+    </div>
+  </div>
+  <div
+    className="segment-part"
+  >
+    <div>
+      1 пересадка
+    </div>
+    <div>
+      SVX
+    </div>
+  </div>
+</div>
+`;
