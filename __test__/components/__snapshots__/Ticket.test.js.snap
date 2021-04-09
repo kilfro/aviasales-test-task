@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ticket must be rendered correctly 1`] = `
+<div
+  className="ticket-card"
+>
+  <div
+    className="ticket-header"
+  >
+    <div>
+      43 073
+       P
+    </div>
+    <img
+      src="http://pics.avs.io/99/36/TG.png"
+    />
+  </div>
+  <FlightSegment
+    date="2021-04-03T08:09:00.000Z"
+    destination="HKT"
+    duration={855}
+    key="2021-04-03T08:09:00.000Z"
+    origin="MOW"
+    stops={
+      Array [
+        "IST",
+        "BKK",
+        "DXB",
+      ]
+    }
+  />
+  <FlightSegment
+    date="2021-04-22T23:47:00.000Z"
+    destination="MOW"
+    duration={1750}
+    key="2021-04-22T23:47:00.000Z"
+    origin="HKT"
+    stops={Array []}
+  />
+</div>
+`;
