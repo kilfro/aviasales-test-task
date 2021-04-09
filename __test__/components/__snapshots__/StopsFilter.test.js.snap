@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StopsFilter must be rendered correctly 1`] = `
+<div
+  className="filter-container"
+>
+  <div
+    style={
+      Object {
+        "margin": "0 20px 10px 20px",
+      }
+    }
+  >
+    количество пересадок
+  </div>
+  <FilterOption
+    checked={false}
+    id="all"
+    onChange={[Function]}
+    value="Все"
+  />
+  <FilterOption
+    checked={false}
+    id="0"
+    key="0"
+    onChange={[Function]}
+    value="Без пересадок"
+  />
+  <FilterOption
+    checked={false}
+    id="1"
+    key="1"
+    onChange={[Function]}
+    value="1 пересадка"
+  />
+  <FilterOption
+    checked={false}
+    id="2"
+    key="2"
+    onChange={[Function]}
+    value="2 пересадки"
+  />
+  <FilterOption
+    checked={false}
+    id="3"
+    key="3"
+    onChange={[Function]}
+    value="3 пересадки"
+  />
+</div>
+`;

@@ -11,7 +11,7 @@ options.set(1, '1 пересадка')
 options.set(2, '2 пересадки')
 options.set(3, '3 пересадки')
 
-const StopsFilter = ({ allOptions = options, filterBy, setFilterBy }) => {
+export const StopsFilter = ({ allOptions = options, filterBy, setFilterBy }) => {
     const [chooseAll, setChooseAll] = React.useState(false)
 
     const isChecked = key => filterBy.includes(key)
@@ -45,7 +45,7 @@ const StopsFilter = ({ allOptions = options, filterBy, setFilterBy }) => {
 
     return <div className='filter-container'>
         <div style={{ margin: '0 20px 10px 20px' }}>количество пересадок</div>
-        <FilterOption checked={chooseAll} onChange={chooseAllHandler} value='Все' />
+        <FilterOption checked={chooseAll} onChange={chooseAllHandler} value='Все' id='all'/>
         {Array.from(allOptions).map(([key, value]) => (
             <FilterOption id={key.toString()} checked={isChecked(key)} onChange={() => changeHandler(key)} value={value} key={key.toString()} />
         ))}
