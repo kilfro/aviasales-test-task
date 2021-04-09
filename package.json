@@ -60,6 +60,7 @@
             "!**/types.js"
         ],
         "moduleNameMapper": {
+            "\\.(jpg|jpeg|png)$": "<rootDir>/__mocks__/file.mock.js",
             "\\.css$": "<rootDir>/__mocks__/style.mock.js"
         }
     }

@@ -8,7 +8,7 @@ import TicketsList from './components/TicketsList'
 import { connect } from 'react-redux'
 import { requestSearchId } from './store/actions'
 
-const App = ({ isLoading, requestSearchId }) => {
+export const App = ({ isLoading, requestSearchId }) => {
     useEffect(requestSearchId, [])
 
     return (
