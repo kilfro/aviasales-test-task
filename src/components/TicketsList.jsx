@@ -5,7 +5,7 @@ import SortTabs from './SortTabs'
 import Ticket from './Ticket'
 import { connect } from 'react-redux'
 
-const TicketsList = ({ tickets, stopsFilter, orderBy }) => {
+export const TicketsList = ({ tickets, stopsFilter, orderBy }) => {
     const filterBySteps = ticket => {
         if (stopsFilter.length === 0) return true
         return ticket.segments.reduce((sum, segment) => stopsFilter.includes(segment.stops.length) && sum, true)

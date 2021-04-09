@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TicketsList must be rendered correctly 1`] = `
+<div
+  className="tickets-list"
+>
+  <Connect(SortTabs) />
+  <Ticket
+    carrier="EK"
+    key="{\\"price\\":30982,\\"carrier\\":\\"EK\\",\\"segments\\":[{\\"origin\\":\\"MOW\\",\\"destination\\":\\"HKT\\",\\"date\\":\\"2021-04-03T06:30:00.000Z\\",\\"stops\\":[\\"AUH\\",\\"SHA\\",\\"BKK\\"],\\"duration\\":1902},{\\"origin\\":\\"HKT\\",\\"destination\\":\\"MOW\\",\\"date\\":\\"2021-04-23T05:32:00.000Z\\",\\"stops\\":[\\"BKK\\",\\"IST\\"],\\"duration\\":941}]}"
+    price={30982}
+    segments={
+      Array [
+        Object {
+          "date": "2021-04-03T06:30:00.000Z",
+          "destination": "HKT",
+          "duration": 1902,
+          "origin": "MOW",
+          "stops": Array [
+            "AUH",
+            "SHA",
+            "BKK",
+          ],
+        },
+        Object {
+          "date": "2021-04-23T05:32:00.000Z",
+          "destination": "MOW",
+          "duration": 941,
+          "origin": "HKT",
+          "stops": Array [
+            "BKK",
+            "IST",
+          ],
+        },
+      ]
+    }
+  />
+  <Ticket
+    carrier="SU"
+    key="{\\"price\\":31101,\\"carrier\\":\\"SU\\",\\"segments\\":[{\\"origin\\":\\"MOW\\",\\"destination\\":\\"HKT\\",\\"date\\":\\"2021-04-03T02:33:00.000Z\\",\\"stops\\":[],\\"duration\\":1729},{\\"origin\\":\\"HKT\\",\\"destination\\":\\"MOW\\",\\"date\\":\\"2021-04-23T01:08:00.000Z\\",\\"stops\\":[\\"SHA\\",\\"BKK\\"],\\"duration\\":1149}]}"
+    price={31101}
+    segments={
+      Array [
+        Object {
+          "date": "2021-04-03T02:33:00.000Z",
+          "destination": "HKT",
+          "duration": 1729,
+          "origin": "MOW",
+          "stops": Array [],
+        },
+        Object {
+          "date": "2021-04-23T01:08:00.000Z",
+          "destination": "MOW",
+          "duration": 1149,
+          "origin": "HKT",
+          "stops": Array [
+            "SHA",
+            "BKK",
+          ],
+        },
+      ]
+    }
+  />
+  <Ticket
+    carrier="TG"
+    key="{\\"price\\":43073,\\"carrier\\":\\"TG\\",\\"segments\\":[{\\"origin\\":\\"MOW\\",\\"destination\\":\\"HKT\\",\\"date\\":\\"2021-04-03T08:09:00.000Z\\",\\"stops\\":[\\"IST\\",\\"BKK\\",\\"DXB\\"],\\"duration\\":855},{\\"origin\\":\\"HKT\\",\\"destination\\":\\"MOW\\",\\"date\\":\\"2021-04-22T23:47:00.000Z\\",\\"stops\\":[],\\"duration\\":1750}]}"
+    price={43073}
+    segments={
+      Array [
+        Object {
+          "date": "2021-04-03T08:09:00.000Z",
+          "destination": "HKT",
+          "duration": 855,
+          "origin": "MOW",
+          "stops": Array [
+            "IST",
+            "BKK",
+            "DXB",
+          ],
+        },
+        Object {
+          "date": "2021-04-22T23:47:00.000Z",
+          "destination": "MOW",
+          "duration": 1750,
+          "origin": "HKT",
+          "stops": Array [],
+        },
+      ]
+    }
+  />
+  <Ticket
+    carrier="EY"
+    key="{\\"price\\":44751,\\"carrier\\":\\"EY\\",\\"segments\\":[{\\"origin\\":\\"MOW\\",\\"destination\\":\\"HKT\\",\\"date\\":\\"2021-04-03T01:37:00.000Z\\",\\"stops\\":[\\"IST\\",\\"HKG\\"],\\"duration\\":670},{\\"origin\\":\\"HKT\\",\\"destination\\":\\"MOW\\",\\"date\\":\\"2021-04-23T15:13:00.000Z\\",\\"stops\\":[\\"SIN\\",\\"DXB\\"],\\"duration\\":1289}]}"
+    price={44751}
+    segments={
+      Array [
+        Object {
+          "date": "2021-04-03T01:37:00.000Z",
+          "destination": "HKT",
+          "duration": 670,
+          "origin": "MOW",
+          "stops": Array [
+            "IST",
+            "HKG",
+          ],
+        },
+        Object {
+          "date": "2021-04-23T15:13:00.000Z",
+          "destination": "MOW",
+          "duration": 1289,
+          "origin": "HKT",
+          "stops": Array [
+            "SIN",
+            "DXB",
+          ],
+        },
+      ]
+    }
+  />
+  <Ticket
+    carrier="SU"
+    key="{\\"price\\":79466,\\"carrier\\":\\"SU\\",\\"segments\\":[{\\"origin\\":\\"MOW\\",\\"destination\\":\\"HKT\\",\\"date\\":\\"2021-04-03T04:20:00.000Z\\",\\"stops\\":[\\"SIN\\",\\"SHA\\"],\\"duration\\":661},{\\"origin\\":\\"HKT\\",\\"destination\\":\\"MOW\\",\\"date\\":\\"2021-04-23T05:53:00.000Z\\",\\"stops\\":[\\"AUH\\"],\\"duration\\":1600}]}"
+    price={79466}
+    segments={
+      Array [
+        Object {
+          "date": "2021-04-03T04:20:00.000Z",
+          "destination": "HKT",
+          "duration": 661,
+          "origin": "MOW",
+          "stops": Array [
+            "SIN",
+            "SHA",
+          ],
+        },
+        Object {
+          "date": "2021-04-23T05:53:00.000Z",
+          "destination": "MOW",
+          "duration": 1600,
+          "origin": "HKT",
+          "stops": Array [
+            "AUH",
+          ],
+        },
+      ]
+    }
+  />
+</div>
+`;
